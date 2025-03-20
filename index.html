@@ -12,15 +12,26 @@
             align-items: center;
             height: 100vh;
             background-color: #f0f0f0;
+            margin: 0;
+        }
+        #container {
+            background-color: #007bff; /* 蓝色背景 */
+            border: 2px solid #0056b3; /* 深蓝色边框 */
+            padding: 20px;
+            border-radius: 10px; /* 圆角边框 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 阴影效果 */
         }
         #text {
             font-size: 2em;
             font-weight: bold;
+            color: white; /* 白色文字 */
         }
     </style>
 </head>
 <body>
-    <div id="text"></div>
+    <div id="container">
+        <div id="text"></div>
+    </div>
 
     <script>
         const text = "Hello there! I'm StrayerSQH!";
