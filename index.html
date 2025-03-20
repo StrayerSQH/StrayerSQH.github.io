@@ -3,50 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StrayerSQH's WebPage</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            margin: 0;
-        }
-        #container {
-            background-color: #007bff; /* 蓝色背景 */
-            border: 2px solid #0056b3; /* 深蓝色边框 */
-            padding: 20px;
-            border-radius: 10px; /* 圆角边框 */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 阴影效果 */
-        }
-        #text {
-            font-size: 2em;
-            font-weight: bold;
-            color: white; /* 白色文字 */
-        }
-    </style>
+    <title>逐个显示文本</title>
+    <link rel="stylesheet" href="styles.css"> <!-- 引入 CSS 文件 -->
 </head>
 <body>
     <div id="container">
         <div id="text"></div>
     </div>
-
-    <script>
-        const text = "Hello there! I'm StrayerSQH!";
-        let index = 0;
-        const textElement = document.getElementById('text');
-
-        function displayText() {
-            if (index < text.length) {
-                textElement.textContent += text.charAt(index);
-                index++;
-                setTimeout(displayText, 100); // 每100毫秒显示一个字符
-            }
-        }
-
-        displayText();
-    </script>
+    <script src="script.js"></script> <!-- 引入 JavaScript 文件 -->
 </body>
 </html>
