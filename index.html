@@ -1,21 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>StrayerSQH's WebPage</title>
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <div id="navi">
-            <div class="naviBox">首页</div>
-            <div class="naviBox">关于我</div>
-            <div class="naviBox">联系我</div>
-            <div class="naviBox">我的项目</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>StrayerSQH's WebPage</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <div id="navi">
+        <div id="Name">Strayer</div>
+        <div id="homeContainer">
+            <i class="bi-house-door" style="color: white;"></i>
+            <div id="home" data-key="home">首页</div>
         </div>
-        <div id="container">
-            <div id="text"></div>
+        <div class="naviBox" data-key="about">
+            <i class="bi bi-laptop"  style="color: white; margin-right:5px;"></i>
+            <span class="navi-text">M-Platform</span>
+            <div class="dropdown-content">
+                <a href="https://blog.csdn.net/HelloStrayer" data-key="csdn">CSDN</a>
+                <a href="https://github.com/StrayerSQH" data-key="github">Github</a>
+                <a href="https://space.bilibili.com/1846815881" data-key="bilibili">哔哩哔哩</a>
+                <a href="https://www.zhihu.com/people/97-30-50-35" data-key="zhihu">知乎</a>
+            </div>
         </div>
-        <script src="index.js"></script>
-    </body>
+        <div class="naviBox" data-key="projects">
+            <i class="bi bi-book-half"  style="color: white; margin-right:5px;"></i>
+            <span class="navi-text">My Projects</span>
+            <div class="dropdown-content">
+                <a href="#" data-key="CSIET">大创</a>
+                <a href="#" data-key="BCP">大挑</a>
+                <a href="#" data-key="SCP">小挑</a>
+            </div>
+        </div>
+        <div class="naviBox" data-key="societyWork">
+            <i class="bi bi-diagram-3"  style="color: white; margin-right:5px;"></i>
+            <span class="navi-text">Society Work</span>
+            <div class="dropdown-content">
+                <a href="#" data-key="SocialPractice">社会实践</a>
+                <a href="#" data-key="CommunityService">社区服务</a>
+                <a href="#" data-key="WorkExperience">任职经历</a>
+            </div>
+        </div>
+        <div class="naviBox" data-key="honours">
+            <i class="bi bi-star"  style="color: white; margin-right:5px;"></i>
+            <span class="navi-text">Honours</span>
+            <div class="dropdown-content">
+                <a href="#" data-key="CompetitionAwards">Competition Awards</a>
+                <a href="#" data-key="ServiceAwards">Service Awards</a>
+                <a href="#" data-key="HobbyAwards">Hobby Awards</a>
+                <a href="#" data-key="OtherAwards">Other Awards</a>
+            </div>
+        </div>
+        <div class="naviBox" data-key="contact">
+            <i class="bi bi-person-fill"  style="color: white; margin-right:5px;"></i>
+            <span class="navi-text">Contact Me</span>
+            <div class="dropdown-content">
+                <a href="#" data-key="contact_web"></a>
+                <a href="#" data-key="contact_email"></a>
+                <a href="#" data-key="contact_tell"></a>
+            </div>
+        </div>
+        <div id="languageSwitchContainer">
+            <i class="bi bi-globe" style="color: white;"></i>
+            <div id="languageSwitch" data-key="language">中文显示</div> <!-- 文本 -->
+        </div>
+    </div>
+    <div id="container">
+        <div id="text"></div>
+    </div>
+    <script src="index.js"></script>
+</body>
 </html>
