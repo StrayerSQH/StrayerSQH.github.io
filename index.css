@@ -6,18 +6,62 @@ body {
     height: 100vh;
     background-color: #f0f0f0;
     margin: 0;
+
+    background-image: url('D:/非常重要的信息/1694597194197.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#navi {
+    background-color: rgb(53, 131, 208);
+    padding: 0px;
+    width: 100%;
+    height: 40px; /* 调整高度以适应内容 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; 
+    display: flex; 
+    justify-content: left; 
+    align-items: center;
+}
+
+.naviBox {
+    color: white; 
+    text-decoration: none; 
+    font-size: 15px;
+    height: 100%; 
+    display: flex; 
+    align-items: center; 
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 5px;
+    cursor: pointer; /* 鼠标悬停时显示手型 */
+}
+
+.naviBox:hover {
+    background-color: rgba(84, 86, 88, 0.5); 
+}
+
+.navilanguage {
+
 }
 
 #container {
-    background-color: #007bff; /* 蓝色背景 */
-    border: 2px solid #0056b3; /* 深蓝色边框 */
+    background-color: rgba(84, 86, 88, 0.5);
     padding: 20px;
-    border-radius: 10px; /* 圆角边框 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 阴影效果 */
+    width: 100%;
+    height: calc(100% - 90px); /* 减去 navi 的高度和 padding */
+    position: fixed;
+    top: 90px; /* 紧挨着 navi */
+    left: 0;
+    display: flex; /* 启用 Flexbox 布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center;
 }
 
 #text {
-    font-size: 2em;
+    font-size: 50px;
     font-weight: bold;
     color: white; /* 白色文字 */
 }
