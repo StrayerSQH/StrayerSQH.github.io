@@ -6,7 +6,7 @@ function displayText() {
     if (index < text.length) {
         textElement.textContent += text.charAt(index);
         index++;
-        setTimeout(displayText, 100); // 每100毫秒显示一个字符
+        setTimeout(displayText, 50); // 每100毫秒显示一个字符
     }
 }
 
