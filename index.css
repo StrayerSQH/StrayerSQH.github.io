@@ -153,8 +153,8 @@ body {
 }
 
 #container {
-    background-color: rgba(84, 86, 88, 0.5);
-    padding: 20px;
+    background-color: white;
+    padding: 0px;
     width: 100%;
     height: calc(100% - 90px);
     position: fixed;
@@ -165,8 +165,223 @@ body {
     align-items: center;
 }
 
-#text {
-    font-size: 50px;
-    font-weight: bold;
+#codeIn {
+    background-color: rgb(14, 73, 131);
+    width: 45%;
+    height: 300px;
+    border-radius: 5px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column; /* 垂直排列子元素 */
+    justify-content: flex-start; /* 子元素从顶部开始排列 */
+    align-items: center; /* 子元素水平居中 */
+}
+
+#codeSelectNavi {
+    background-color: white;
+    width: 100%;
+    height: 10%;
+    border: 1px solid;
+    border-radius: 5px 5px 0 0;
+    border-color: rgb(119, 116, 116);
+    padding: 2px 0; /* 上下内边距 */
+    display: flex; /* 使用flex布局 */
+    align-items: center; /* 垂直居中 */
+    justify-content: flex-start; /* 子元素从左侧开始排列 */
+}
+
+.codeCircalElem {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 1px; 
+}
+
+.codeCircalElem:hover {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 1px;
+}
+
+.codeTitle {
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #999;
+    margin-left: 5px; 
+}
+
+#codeContainer {
+    font-size: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    border: 1px solid;
+    border-color:rgb(14, 73, 131);
+    border-radius: 0 0 5px 5px;
+    overflow-x: auto; /* 水平滚动 */
+    overflow-y: auto; /* 垂直滚动 */
+    white-space: nowrap; /* 防止内容自动换行 */
+}
+
+.codeContainerText {
+    margin: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10px;
+    border-color:rgb(14, 73, 131);
+    white-space: pre; 
+}
+
+.keyword {
+    color: blue;
+}
+
+.comment {
+    color: green;
+}
+
+.string {
+    color: red;
+}
+
+.tag {
+    color: purple;
+}
+
+.attribute {
+    color: rgb(14, 73, 131);
+}
+
+#codeContainer::-webkit-scrollbar {
+    width: 5px; /* 滚动条宽度 */
+    height: 5px;
+}
+
+#codeContainer::-webkit-scrollbar-track {
+    background: rgb(208, 207, 207); /* 滚动条轨道背景色 */
+    border-radius: 2.5px;
+}
+
+#codeContainer::-webkit-scrollbar-thumb {
+    background: rgb(14, 73, 131); /* 滚动条滑块悬停背景色 */
+    border-radius: 2.5px;
+}
+
+#personalInfoOverview {
+    background-color: rgb(14, 73, 131);
+    width: 45%;
+    height: 300px;
+    border-radius: 5px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column; /* 水平排列子元素 */
+    justify-content: space-between; /* 子元素两端对齐 */
+    align-items: center; /* 子元素垂直居中 */
     color: white;
+    padding: 0px;
+}
+
+#personalInfoOverview-top {
+    height: 50%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+}
+
+.personalInfoOverview-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 30%; 
+    height: 100%;
+    padding: 10px;
+    margin: 0px;
+    justify-content: left; 
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.info {
+    padding: 0px;
+    margin: 0px;
+    text-align: left; /* 确保文本内容靠左 */
+    display: flex; /* 如果需要使用 flex 布局 */
+    flex-direction: column; /* 如果需要垂直排列子元素 */
+    justify-content: flex-start; /* 确保子元素从容器的起始位置开始排列 */
+    align-items: flex-start; /* 确保子元素在交叉轴上靠左对齐 */
+}
+
+.info h3 {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.divider {
+    display: block; /* 确保它是一个块级元素 */
+    width: 50%; /* 分界线宽度为父容器的 100% */
+    height: 1px; /* 分界线的高度 */
+    background-color: white; /* 分界线的颜色为白色 */
+    margin: 5px 0; /* 上下外边距，可根据需要调整 */
+}
+
+.info .education {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    margin-top: 5px;
+    text-align: left; /* 明确指定文本靠左 */
+}
+
+.info .organization {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    margin-top: 5px;
+    text-align: left; /* 明确指定文本靠左 */
+}
+
+.info .skill {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    margin-top: 5px;
+    text-align: left; /* 明确指定文本靠左 */
+}
+
+.info .signiture {
+    font-family: 'Edwardian Script ITC', Times, serif;
+    font-size: 25px;
+    margin-top: 5px;
+    text-align: left; /* 明确指定文本靠左 */
+}
+
+.personalInfoOverview-right {
+    width: 70%;
+    height: 100%;
+    padding: 5px;
+}
+
+#personalInfoOverview-bottom {
+    height: 50%;
+    width: 95%;
+    margin: 10px 0; 
+    padding: 10px; 
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.awards {
+    width: 100%;
+    margin: 10px 0; 
+    font-size: 13px; 
+    color: white; 
+    padding-top: 2px;
 }
