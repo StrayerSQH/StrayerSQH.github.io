@@ -159,7 +159,7 @@ function typeCode() {
         index++;
         // 滚动到最底部
         codeContainer.scrollTop = codeText.scrollHeight;
-        setTimeout(typeCode, 0.1); // 2毫秒显示一个字符
+        setTimeout(typeCode, 0.1); 
     }
 }
 
