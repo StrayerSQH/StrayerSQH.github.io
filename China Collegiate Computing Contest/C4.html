@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<meta charset="UTF-8">
+
+<head>
+    <title>基于光通信的鸿蒙小车编队巡航系统</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .top_photo {
+            height: 430px;
+            /* 设置高度为 400px */
+            width: 100%;
+            /* 设置宽度为 100%，即与页面同宽 */
+            /* 其他样式保持不变 */
+        }
+
+        .top_photo .box-img {
+            width: 100%;
+            /* 设置图片宽度为 100%，即与 .top_photo 元素同宽 */
+            height: 100%;
+            /* 设置图片高度为 100%，即与 .top_photo 元素同高 */
+            object-fit: cover;
+            /* 保持图片的宽高比，同时填充元素的整个内容框 */
+        }
+
+        nav {
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            padding: 10px;
+            margin-bottom: 0px;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        dir {
+            background-color: #2759C1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            display: flex;
+            flex-grow: 1;
+            text-align: center;
+            font-size: 14px;
+            height: 50px;
+            margin-top: 0px;
+            padding-left: 100px;
+            padding-right: 100px;
+            gap: 50px;
+            margin-bottom: 0px;
+        }
+
+        dir a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: block;
+            position: absolute;
+            background-color: #fff;
+            min-width: 140px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            left: 50%;
+            top: 185%;
+            transform: translate(-50%, 0%);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 1.0s ease-out;
+        }
+
+        .dropdown:hover .dropdown-content {
+            max-height: 200px;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            font-size: 12px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #666;
+        }
+
+        .dropdown:hover>a {
+            color: #fff;
+        }
+
+        .box1 {
+            display: flex;
+            align-items: stretch;
+            /* 子元素填充整个容器的高度 */
+            gap: 10px;
+            padding: 0;
+            /* 设置内边距为0 */
+            background-color: #2759C1;
+            border: none;
+            /* 移除边框 */
+            height: 50px;
+        }
+
+        .box-link1 {
+            display: flex;
+            justify-content: space-between;
+            /* 将链接在容器中平均分布 */
+            align-items: center;
+            /* 将链接垂直居中 */
+            height: 50px;
+            /* 设置.box-link1的高度 */
+            background-color: #2759C1;
+            flex-grow: 1;
+            /* 允许.box-link1元素在必要时增大宽度 */
+            margin-left: 45px;
+        }
+
+        .box-link1:first-child a {
+            margin-left: 50px;
+            /* 设置第一个链接距左边的距离为50px */
+        }
+
+        .box-link1 a {
+            font-size: 14px;
+            color: #FFFFFF;
+            /* 设置链接颜色为白色 */
+            text-decoration: none;
+            /* 移除链接的下划线 */
+        }
+
+        .text-box {
+            column-count: 2;
+            /* 将文本分为两栏 */
+            text-align: left;
+            /* 将文本居中 */
+            padding: 10px;
+            /* 设置上下左右的内边距为20px */
+            background-color: #fff;
+            /* 设置背景颜色 */
+            color: #2759C1;
+            /* 设置文本颜色 */
+            margin-top: 30px;
+            /* 设置上边距为20px，使得文本框与链接之间有一定的距离 */
+            margin-bottom: 0px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .text-box p.chinese {
+            font-family: 'KaiTi', serif;
+            /* 设置中文段落的字体为楷体 */
+        }
+
+        h5 {
+            color: #333;
+            font-size: 20px;
+            text-align: left;
+            padding: 20px;
+            background-color: #f7f7f7;
+            margin-bottom: 0;
+        }
+
+        .youqinglianjie {
+            color: #fff;
+            font-size: 24px;
+            text-align: left;
+            background-color: #2759C1;
+            border: 2px solid #2759C1;
+            margin-top: 0px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-top: 10px;
+            /* 设置文本距离上边界的距离 */
+            padding-bottom: 50px;
+            /* 设置文本距离下边界的距离 */
+            margin-bottom: 0px;
+            margin-top: 0px;
+            list-style-type: none;
+        }
+
+        .youqinglianjie li a {
+            line-height: 20px;
+            flex: 1 0 calc(12.5% - 10px);
+            /* 每行显示8个链接，每个链接占用12.5%，减去10px的间隔 */
+            margin-right: 10px;
+            /* 设置链接之间的间隔 */
+            list-style-type: none;
+            /* 移除列表前的点 */
+            font-size: 10px;
+            color: #fff;
+            white-space: nowrap;
+            /* 防止文本换行 */
+            overflow: hidden;
+            /* 隐藏超出链接宽度的文本 */
+            text-overflow: ellipsis;
+            /* 使用省略号表示超W出的文本 */
+            list-style-type: none;
+        }
+
+        .youqinglianjie li a:hover {
+            background-color: #32B8EA;
+            /* 鼠标悬停时的背景颜色 */
+            color: #fff;
+            /* 鼠标悬停时的文字颜色 */
+        }
+
+        .banquan {
+            color: #2759C1;
+            font-size: 24px;
+            text-align: left;
+            background-color: #333;
+            border: 2px solid #333;
+            margin-top: 0px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-top: 10px;
+            /* 设置文本距离上边界的距离 */
+            padding-bottom: 50px;
+            /* 设置文本距离下边界的距离 */
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .bottom {
+            color: #fff;
+            font-size: 24px;
+            text-align: center;
+            background-color: #2759C1;
+            border: 2px solid #2759C1;
+            margin-top: 0px;
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 10px;
+            /* 设置文本距离上边界的距离 */
+            padding-bottom: 10px;
+            /* 设置文本距离下边界的距离 */
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .bottom li {
+            color: #fff;
+            line-height: 20px;
+            font-size: 10px;
+            list-style-type: none;
+        }
+
+        .bottom li a:link {
+            color: #fff;
+            /* 链接未被点击时的颜色 */
+        }
+
+        .bottom li a:hover {
+            background-color: #32B8EA;
+            /* 鼠标悬停时的背景颜色 */
+            color: #fff;
+            /* 鼠标悬停时的文字颜色 */
+        }
+
+        .bottom li a:link,
+        .bottom li a:visited {
+            color: #fff;
+            /* 设置链接未被点击或已访问时的颜色为白色 */
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .center-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .arrow {
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+            position: relative;
+            top: -1px;
+        }
+
+        .link-with-arrow {
+            display: flex;
+            align-items: center;
+        }
+
+        .ProductContainer {
+            width: 90%;
+            /* 增加容器宽度 */
+            max-width: 1200px;
+            /* 设置最大宽度 */
+            margin: auto;
+            padding: 20px;
+        }
+
+        .introduction {
+            background: white;
+            padding: 40px;
+            /* 增加内边距以拉长 */
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            /* 文本居中 */
+        }
+
+        .introduction ProductContainer2 {
+            font-size: 2em;
+            /* 放大一倍 */
+            margin-top: 0px;
+            display: inline-block;
+            border-bottom: 2px solid #0066cc;
+            /* 红色下划线 */
+            text-align: center;
+            /* 文本居中 */
+            font-family: "STXingkai", serif;
+        }
+
+        .introduction p {
+            font-family: "华文楷体", serif;
+            /* 设置字体为华文楷体 */
+            text-align: left;
+            font-size: 20px;
+            text-indent: 2em;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* 特性内容居中 */
+        }
+
+        .feature {
+            background: #f9fafa;
+            padding: 20px;
+            /* 增加内边距 */
+            margin: 10px;
+            border-radius: 10px;
+            flex: 1 1 200px;
+            text-align: center;
+            max-width: 400px;
+            /* 设置特性最大宽度 */
+        }
+
+        .feature ProductContainer3 {
+            font-size: 3em;
+            text-align: center;
+            font-family: "STXingkai", serif;
+            color: #0066cc;
+        }
+
+        .feature p {
+            font-size: 1em;
+            /* 缩小一倍 */
+            font-family: "华文楷体", serif;
+            /* 设置字体为华文楷体 */
+            text-align: left;
+            text-indent: 2em;
+        }
+
+        ProductContainer2.major {
+            text-align: center;
+            font-size: 1.5em;
+            /* 缩小字体 */
+            margin: 20px auto;
+            /* 添加上边距并居中 */
+            text-align: center;
+            /* 文本居中 */
+            display: inline-block;
+            border-bottom: 2px solid #0066cc;
+            /* 红色下划线 */
+            padding-bottom: 5px;
+            /* 美化下划线 */
+            font-family: "STXingkai", serif;
+        }
+
+        #four-column-container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .column {
+            display: flex;
+            margin: 10px;
+            text-align: center;
+            background: #f9fafa;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            justify-content: center;
+            /* 修正后的属性 */
+            align-items: center;
+            flex-direction: column;
+            /* 如果需要垂直居中，可以加上这一行 */
+        }
+
+        .column h3 {
+            font-size: 25px;
+            color: #0066cc;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            font-family: "STXingkai"
+
+
+        }
+
+        .column img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .column p {
+            width: 100%;
+            font-size: 1em;
+            font-family: "华文楷体", serif;
+            text-align: left;
+            text-indent: 2em;
+        }
+
+        .middle-columns {
+            display: flex;
+            flex-direction: column;
+            flex: 2;
+        }
+
+        .middle-columns .column {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .middle-columns .column img {
+            margin-bottom: 10px;
+        }
+
+        .photoContainer {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            /* 修正后的属性 */
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div>
+        </div>
+        <div>
+            <a href="#home">首页</a>
+            <a>|</a>
+            <a href="#about">官方媒体</a>
+            <a>|</a>
+            <a href="#expert">关于我们</a>
+            <a>|</a>
+            <a href="#sub">投稿文章</a>
+            <a>|</a>
+            <input type="search" id="site-search" name="q" placeholder="搜索本站">
+        </div>
+    </nav>
+    <dir>
+        <div class="dropdown">
+            <a href="#home">首页</a>
+        </div>
+
+        <div class="dropdown">
+            <a href="#contact">产品服务</a>
+            <div class="dropdown-content">
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#expert">社会服务</a>
+            <div class="dropdown-content">
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#expert">政府/组织链接</a>
+            <div class="dropdown-content">
+                <a href="https://www.gov.cn/">中国政府网</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#sub">资料下载</a>
+            <div class="dropdown-content">
+                <a href="#sub1">国家政策</a>
+                <a href="#sub2">国家法律</a>
+                <a href="#sub3">案例解读</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#sub">加入我们</a>
+            <div class="dropdown-content">
+            </div>
+        </div>
+    </dir>
+
+    <div class="top_photo"><img src="项目logo.jpg" alt="3-6岁" class="box-img"></div>
+
+
+    <div class="ProductContainer">
+        <div class="introduction">
+            <ProductContainer2>基于光通信的鸿蒙小车编队巡航系统</ProductContainer2>
+            <p>
+                随着汽车产业的高速发展，汽车化社会带来的诸如交通安全、出行效率等问题日益突出。车辆联网编队运行是解决上述问题的一种切实可行的方案。本项目依托华为Open
+                Harmony3.0，在现有车载设备的基础上，搭建低功耗、低延时，
+                高可靠性的车辆编队自动巡航系统，项目核心采用基于普通LED车灯的可见光通信作为车辆间通信技术，解决基于传统射频的车联网通信易受干扰、带宽受限等问题，从而实现低成本、适用性广的车辆编队自动巡航。
+            </p>
+        </div>
+
+        <ProductContainer2 class="major">为什么我们要做</ProductContainer2>
+        <div class="features">
+            <div class="feature">
+                <ProductContainer3>更急迫</ProductContainer3> <!-- 放大一倍 -->
+                <p>
+                    《中国制造２０２５》首次提出了车联网汽车概念，明确了其发展目标：２０２０年掌握智能辅助驾驶总体技术及各项关键技术，初步建立智能网联汽车自主研发体系及生产配套体系；２０２５年掌握自动驾驶总体技术及各项关键技术，建立较完善的智能网联汽车自主研发体系、生产配套体系及产业群，基本完成汽车产业转型升级。
+                </p> <!-- 缩小一倍 -->
+            </div>
+            <div class="feature">
+                <ProductContainer3>更可靠</ProductContainer3> <!-- 放大一倍 -->
+                <p>
+                    在传统的车联网解决方案中，车与车之间的通信通过射频无线电RF实现。但基于RF的无线通信技术普遍存在着无线带宽受限，频谱资源短缺的问题，且极易受到干扰，这是自动巡航系统实现跨越初级阶段，迈向最终形态无人驾驶的一大痛点。相反地，基于可见光通信的无线通信技术，完全不存在上述问题。
+                </p> <!-- 缩小一倍 -->
+            </div>
+            <div class="feature">
+                <ProductContainer3>更智能</ProductContainer3> <!-- 放大一倍 -->
+                <p>在车联网汽车的初级阶段，先进智能驾驶辅助技术就能助力减少约30%的交通事故，使交通效率提升10%，使油耗与排放分别降低5%。若随着技术的不断进步和智能驾驶辅助系统的进一步优化升级，有望在未来实现更高的安全性能和更低的能耗与排放水平。</p> <!-- 缩小一倍 -->
+            </div>
+        </div>
+        <ProductContainer2 class="major">我们如何做的</ProductContainer2>
+        <div class="container">
+            <div class="four-column-container">
+                <!-- 最左边的板块 -->
+                <div class="middle-columns">
+                    <div class="column">
+                        <h3>华为Open Harmony3.0国产化搭载平台</h3>
+                        <p>华为Open Harmony3.0系统健壮性强，功能强大，且可根据开发需求，自行裁剪内核，支持的最小内存为128kiB。同时，支持不同MCU架构，泛用性强，充分满足本项目需求。</p>
+                        <img src="系统概览.jpg" alt="系统整体概览">
+                        <p>华为Open Harmony 3.0系统的这些特性不仅使其在技术层面表现出色，更在国产化自主可控方面具有重要意义。作为国产操作系统，Open Harmony
+                            3.0完全由国内团队自主研发，拥有自主知识产权，这意味着其核心代码和技术架构不受制于国外技术限制，能够从底层保障系统的安全性与稳定性。在本项目中，采用Open Harmony
+                            3.0系统，可确保车联网可见光通信系统的开发与运行完全基于国产自主技术，有效避免因使用国外系统可能带来的技术封锁与安全隐患，实现关键核心技术的自主可控，为项目的顺利推进以及后续的拓展升级提供坚实可靠的技术支撑，有力推动我国车联网技术及相关产业的自主创新发展。
+                        </p>
+                        <img src="HarmonyOS.jpg" alt="HarmonyOS" height="10px">
+                    </div>
+                </div>
+                <div class="column">
+                    <h3>可见光通信系统构建</h3>
+                    <p>基于自主设计的LED发射端和PD发射端，综合使用调制、解调、编码和解码技术，实现可见光通信系统。</p>
+                    <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp1.调制环节通过将LED灯珠分组，并运用OOK（开关键控）调制方式，巧妙地避开了LED灯珠自身非线性特性所带来的问题。
+                    </p>
+                    <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp2.在解调环节，先依据设定的阈值进行初步解调，再借助信息包头来进行信号监测与信息解调。</p>
+                    <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp3.编码环节则给每个信息包都加上了信息包头，并且采用前向验错码（FEC）以及4B6B
+                        RLL编码，以此来增强通信的稳定性。</p>
+                    <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp4.解码环节主要是对解调后的二进制序列进行持续监测，一旦监测到信息头，就按照FEC和4B6B
+                        RLL的解码算法来进行信息解码。</p>
+                    <div class="photoContainer">
+                        <img src="调制.jpg" alt="调制">
+                        <img src="编码.jpg" alt="编码">
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h3>自动巡航系统构建</h3>
+                    <p>自动巡航系统经过十余载的发展，传统的雷达射频解决方案已经有不少的工业化产品。但由于其最底层——通信层的实现原理于本项目不同，导致本项目不可对其进行复用。因此，需重新设计开发适用于可见光通信的自动巡航系统。本项目融合了三大模块：信息处理模块、基于PID算法的车辆控制模块和紧急避险模块。使得系统安全性、可靠性大大提升。
+                    </p>
+                    <div class="photoContainer">
+
+                        <img src="信息处理.jpg" alt="信息处理">
+                        <img src="PID.jpg" alt="PID">
+                        <img src="紧急避险.jpg" alt="紧急避险">
+                    </div>
+                </div>
+            </div>
+
+            <div class="center-links">
+                <a href="#top"><img class="arrow" src="向上箭头.png" alt="向上箭头">返回顶部</a>
+                <a>|</a>
+                <a href="#top">探索更多<img class="arrow" src="向右箭头.png" alt="向右箭头"></a>
+            </div>
+            <div class="fengelan"></div>
+
+            <footer>
+                <div>
+                    <h5>友情链接</h5>
+                    <ul class="youqinglianjie">
+                        <li><a href="http://www.wenming.cn/" target="_blank">中国文明网</a></li>
+                        <li><a href="http://www.scwmw.cn" target="_blank">四川文明网</a></li>
+                        <li><a href="http://shaoer.cntv.cn/" target="_blank">央视网青少年台</a></li>
+                        <li><a href="http://www.cnfirst.net/" target="_blank">中国儿童教育网</a></li>
+                        <li><a href="http://www.ccppg.com.cn/" target="_blank">中少在线</a></li>
+                        <li><a href="http://www.haomahaoba.com/" target="_blank">全国网上家长学校</a></li>
+                        <li><a href="http://www.zget.org/" target="_blank">中国儿童网</a></li>
+                        <li><a href="http://www.cncv.org.cn/" target="_blank">中国社区志愿服务网</a></li>
+                        <li><a href="http://www.w010w.com.cn/" target="_blank">中国网联网</a></li>
+                        <li><a href="http://www.tjwenming.cn/" target="_blank">天津文明网</a></li>
+                        <li><a href="http://sd.wenming.cn/" target="_blank">山东文明网</a></li>
+                        <li><a href="http://edu.sxgov.cn/" target="_blank">黄河新闻网科教频道</a></li>
+                        <li><a href="http://www.dzrbs.com/" target="_blank">达州日报网</a></li>
+                        <li><a href="http://www.cqnews.net/" target="_blank">华龙网</a></li>
+                        <li><a href="http://www.xncmw.cn/" target="_blank">西南传媒网</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="bottom">
+                        <li><a href="http://www.kids21.cn/wzdb/gywm/201102/t20110214_39536.htm" target="_blank">关于我们</a>
+                        </li>
+                        <li style="color: #fff;">|</li>
+                        <li><a href="http://www.kids21.cn/wzdb/lxwm/201102/t20110218_45795.htm" target="_blank">联系我们</a>
+                        </li>
+                        <li style="color: #fff;">|</li>
+                        <li><a href="http://www.kids21.cn/wzdb/jrwm/201102/t20110218W_45824.htm"
+                                target="_blank">加入我们</a></li>
+                        <li style="color: #fff;">|</li>
+                        <li><a href="http://bbs.kids21.cn/forum-187-1.html" target="_blank">在线投稿</a></li>
+                        <li style="color: #fff;">|</li>
+                        <li><a href="#top">返回首页</a></li>
+                    </ul>
+                </div>
+            </footer>
+</body>
+
+</html>
