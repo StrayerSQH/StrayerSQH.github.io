@@ -16,6 +16,7 @@
 
   /* keep footer in normal document flow so custom widgets do not overlap content */
   height: auto;
+  position: fixed;
   bottom: 0;
 
 
