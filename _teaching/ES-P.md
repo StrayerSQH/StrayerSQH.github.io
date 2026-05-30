@@ -1,11 +1,11 @@
 ---
 title: "Design of a Low-Cost Miniature Source-Seeking Detection Device Based on Extremum Seeking (ES) Algorithm and Its Supporting Interface Platform"
 collection: teaching
-type: "Workshop"
+type: "Provincial-Level Student Research Training Program"
 permalink: /teaching/ES-P
 venue: "Sichuan University"
-date: 2015-01-01
-location: "City, Country"
+date: 2024-12-01
+location: "Chengdu, China"
 ---
 
 This is a description of a teaching experience. You can use markdown like any other post.
