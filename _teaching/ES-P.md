@@ -1,9 +1,9 @@
 ---
-title: "Teaching experience 2"
+title: "Design of a Low-Cost Miniature Source-Seeking Detection Device Based on Extremum Seeking (ES) Algorithm and Its Supporting Interface Platform"
 collection: teaching
 type: "Workshop"
-permalink: /teaching/2015-spring-teaching-1
-venue: "University 1, Department"
+permalink: /teaching/ES-P
+venue: "Sichuan University"
 date: 2015-01-01
 location: "City, Country"
 ---
