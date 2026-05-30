@@ -1,5 +1,5 @@
 ---
-title: "Adaptive-Excitation Stochastic Source Seeking for Two-Wheeled Differential Drive Robot"
+title: "(In press) Adaptive-Excitation Stochastic Source Seeking for Two-Wheeled Differential Drive Robot"
 collection: publications
 category: conferences
 permalink: /publication/ICCAR2026
