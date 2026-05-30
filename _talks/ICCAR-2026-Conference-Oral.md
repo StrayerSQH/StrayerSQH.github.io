@@ -4,7 +4,7 @@ collection: talks
 type: "Conference Oral"
 permalink: /ICCAR-2026-Conference-Oral
 venue: "ICCAR 2026 (Virtual Conference)"
-date: April 8-10, 2026
+date: 2026-4-10
 location: "Online"
 ---
 
