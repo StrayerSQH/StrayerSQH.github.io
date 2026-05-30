@@ -1,5 +1,5 @@
 ---
-title: "Teaching experience 1"
+title: "Research on Satellite Attitude Determination Method Based on an Improved Kalman Filtering Algorithm (基于卡尔曼滤波改进算法的卫星姿态确定方法研究)"
 collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/2014-spring-teaching-1
