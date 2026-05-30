@@ -10,4 +10,4 @@ location: "Online"
 
 The paper titled "Adaptive-Excitation Stochastic Source Seeking for Two-Wheeled Differential Drive Robot" was presented at the 2026 IEEE International Conference on Control, Automation and Robotics (ICCAR) by Qianhao Sun. 
 
-![Presentation slide]()
+![Presentation slide](https://github.com/StrayerSQH/StrayerSQH.github.io/blob/master/images/talks/ICCAR_2026_Slide.jpg)
