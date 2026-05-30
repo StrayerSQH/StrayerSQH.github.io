@@ -1,15 +1,15 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
+    "name": "Qianhao Sun",
     "email": "none@example.org",
     "phone": "",
-    "website": "https://academicpages.github.io",
+    "website": "https://strayersqh.github.io/",
     "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Earth",
-      "countryCode": "US",
+      "city": "Chengdu",
+      "countryCode": "CN",
       "region": ""
     },
     "profiles": [
@@ -21,7 +21,7 @@
       {
         "network": "ORCID",
         "username": "",
-        "url": "https://orcid.org/yourorcidurl"
+        "url": "https://orcid.org/0009-0000-8812-7222"
       },
       {
         "network": "GitHub",
