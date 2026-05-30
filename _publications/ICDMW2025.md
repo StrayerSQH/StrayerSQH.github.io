@@ -8,6 +8,6 @@ date: 12-15 November 2025
 venue: '2025 IEEE International Conference on Data Mining Workshops (ICDMW)'
 slidesurl: 'https://ieeexplore.ieee.org/document/11416448'
 paperurl: 'https://ieeexplore.ieee.org/document/11416448'
-bibtexurl: 'https://academicpages.github.io/files/ICDMW2025.bib'
+bibtexurl: 'https:///StrayerSQH.github.io/files/ICDMW2025.bib'
 citation: 'G. Li, J. Shen, Q. Sun, and R. Ding, ‘LESC-ODE: Lyapunov-Enhanced Neural ODE Controller for Stochastic Source Seeking’, in 2025 IEEE International Conference on Data Mining Workshops (ICDMW), 2025, pp. 1748–1752.'
 ---
