@@ -21,4 +21,4 @@ My Contributions:
 Project Outcome:
 ======
 
-- Successfully completed the project and passed the department-level evaluation.
+- Completed the project and passed the department-level evaluation.
