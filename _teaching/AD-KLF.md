@@ -1,5 +1,5 @@
 ---
-title: "Research on Satellite Attitude Determination Method Based on an Improved Kalman Filtering Algorithm (基于卡尔曼滤波改进算法的卫星姿态确定方法研究)"
+title: "Research on Satellite Attitude Determination Method Based on an Improved Kalman Filtering Algorithm"
 collection: teaching
 type: "Department-Level Student Research Training Program"
 permalink: /teaching/AD-KLF
