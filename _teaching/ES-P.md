@@ -8,12 +8,24 @@ date: 2024-12-01
 location: "Chengdu, China"
 ---
 
-This project focuses on the hardware-software co-design problem of source signal search for unmanned systems. Aiming at the problem of signal source search in special environments such as underwater or under-ice where GNSS is unavailable or the use of INS is too costly, the project adopts the Extremum Seeking (ES) algorithm to achieve source localization relying solely on the numerical signal from the source. The project first conducts physical experiments on unmanned vehicles and unmanned aerial vehicles based on existing source-seeking algorithms. Subsequently, the algorithm is improved to expand its applications, considering source-seeking algorithm design and experimental validation under conditions such as time delay, obstacle avoidance, and distributed cooperative control. Finally, relevant hardware control functions are encapsulated to build a user-friendly software-hardware interface platform.
+This is a provincial-level innovation and entrepreneurship training program for college students. Qianhao Sun served as the **principal investigator**, responsible for the research and implementation of the **Extremum Seeking Control (ESC)** algorithm and **Stochastic Extremum Seeking Control (SESC)** algorithm on a real platform. 
 
-This is a provincial-level innovation and entrepreneurship training program for college students. Qianhao Sun served as the second team member, responsible for the research and implementation of the Extremum Seeking Control (ESC) algorithm and Stochastic Extremum Seeking Control (SESC) algorithm on a real platform.
+This project focuses on the hardware-software co-design problem of source signal search for unmanned systems. Aiming at the problem of signal source search in special environments such as underwater or under-ice where GNSS is unavailable or the use of INS is too costly, the project adopts the Extremum Seeking (ES) algorithm to achieve source localization relying solely on the numerical signal from the source. The project first conducts physical experiments on unmanned vehicles and unmanned aerial vehicles based on existing source-seeking algorithms. Subsequently, the algorithm is improved to expand its applications, considering source-seeking algorithm design and experimental validation under conditions such as time delay, obstacle avoidance, and distributed cooperative control. Finally, relevant hardware control functions are encapsulated to build a user-friendly software-hardware interface platform.
 
 My Contributions:
 ======
 
+- Researched and implemented the Extremum Seeking (ES) algorithm for source-seeking applications.
+- Conducted simulation experiments to validate the effectiveness of the proposed algorithm.
+- Performed physical platform verification on unmanned vehicles and aerial vehicles.
+- Developed supporting software, including hardware control function encapsulation and user-friendly interface design.
+- Paper writing
+
 Project Outcome:
 ======
+
+- **Conference Paper:** LESC-ODE: Lyapunov-Enhanced Neural ODE Controller for Stochastic Source Seeking
+- **Conference Paper:** Adaptive-Excitation Stochastic Source Seeking for Two-Wheeled Differential Drive Robot
+- Obtained a software copyright authorization for the software.
+- Successfully completed the project and passed the provincial-level evaluation.
+
