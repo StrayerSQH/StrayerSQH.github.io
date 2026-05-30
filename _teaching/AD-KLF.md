@@ -2,7 +2,7 @@
 title: "Research on Satellite Attitude Determination Method Based on an Improved Kalman Filtering Algorithm"
 collection: teaching
 type: "Department-Level Student Research Training Program"
-permalink: /projects/AD-KLF
+permalink: /teaching/AD-KLF
 venue: "Sichuan University"
 date: 2023-10-01
 location: "Chengdu, China"
