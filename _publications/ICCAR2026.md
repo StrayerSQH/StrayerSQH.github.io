@@ -8,7 +8,7 @@ date: 2026-04-10
 venue: '2026 12th International Conference on Control, Automation and Robotics (ICCAR)'
 slidesurl: 'https://ieeexplore.ieee.org/document/11549703'
 paperurl: 'https://ieeexplore.ieee.org/document/11549703'
-bibtexurl: ''
+bibtexurl: 'https://github.com/StrayerSQH/StrayerSQH.github.io/blob/master/files/ICCAR2026.bib'
 citation: 'Q. Sun, J. Shen, and G. Li, ‘Adaptive-Excitation Stochastic Source Seeking for Two-Wheeled Differential Drive Robot’, in 2026 12th International Conference on Control, Automation and Robotics (ICCAR), 2026, pp. 17–25.'
 ---
 
