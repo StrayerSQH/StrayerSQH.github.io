@@ -1,5 +1,5 @@
 ---
-title: "Source-Seeking Approach with Non-Reversing Forward Velocity Regulation via Multi-Sensor Feedback"
+title: "（In Press）Source-Seeking Approach with Non-Reversing Forward Velocity Regulation via Multi-Sensor Feedback"
 collection: publications
 category: manuscripts
 permalink: /publication/Mathmatics2026
