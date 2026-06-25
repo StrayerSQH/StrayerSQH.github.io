@@ -8,7 +8,7 @@ date: 2026-06-21
 venue: 'Mathematics'
 slidesurl: 'https://www.mdpi.com/2227-7390/14/13/2260'
 paperurl: 'https://www.mdpi.com/2227-7390/14/13/2260'
-bibtexurl: '/publication/mathematics2026'
+bibtexurl: 'https://github.com/StrayerSQH/StrayerSQH.github.io/blob/master/files/mathematics2026'
 citation: 'Q. Sun, G. Li, J. Shen, R. Wu, W. Zhang, and M. Geng, ‘Source-Seeking Approach with Non-Reversing Forward Velocity Regulation via Multi-Sensor Feedback’, Mathematics, vol. 14, no. 13, 2026.'
 ---
 
